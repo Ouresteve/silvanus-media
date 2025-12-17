@@ -1,4 +1,4 @@
-const text = "Connecting People through Photography and Videography by Capturing Moments That Last Forever.";
+
 let index = 0;
 const images = [
   "Images/1765973486240.jpg",
@@ -9,20 +9,71 @@ const images = [
   "Images/1765973616230.jpg"
 ];
 
-
+/*
 function typeEffect() {
-  if (index < text.length) {
+  if(index < text.length) {
     document.getElementById("typing-text").textContent += text.charAt(index)
-    while (index==80){
-        document.getElementById("typing-text").textContent -= text.charAt(index);
-        index--;
-    }
+    
     index++;
-    setTimeout(typeEffect, 80);
+    setTimeout(typeEffect, 100);
   }
-}
+}*/
 
-window.onload = typeEffect;
+window.onload = function() {
+    const element = document.getElementById("typing-text");
+    const texts = [ "Connecting People through Photography and Videography by Capturing Moments That Last Forever.",
+      "From personal captures to weddings, shows & unforgettable moments."
+    ];
+    let textIndex= 0;
+    let charIndex=0;
+    let isDeleting= false;
+
+    const typingSpeed=80;
+    const deletingSpeed=40;
+    const pauseAfterTyping=2000;
+    const pauseAfterDeleting=500;
+
+    /*const cursor = this.document.createElement("span");
+    cursor.textContent="|";
+    cursor.style.marginLeft="4px";
+    cursor.style.animation="blink is infinite";
+    element.appendChild(cursor);*/
+
+    const style = this.document.createElement("style");
+    style.textContent = `@keyframes blink {
+          0% { opacity:1; }
+          50% { opacity:0;}
+          100%{ opacity: 1;}
+      }
+    `;
+    document.head.appendChild(style);
+    function typeEffect() {
+        const currentText = texts[textIndex];
+
+        if (!isDeleting) {
+          element.textContent= currentText.slice(0,charIndex + 1);
+          charIndex++;
+
+          if (charIndex ===currentText.length) {
+            setTimeout(()=> (isDeleting=true),pauseAfterTyping);
+          }
+        }else {
+          element.textContent= currentText.slice(0,charIndex-1);
+          charIndex--;
+
+          if ( charIndex===0) {
+            isDeleting=false;
+            textIndex = ( textIndex + 1) % texts.length;
+            setTimeout(()=>{},pauseAfterDeleting);
+          }
+        }
+        setTimeout(
+          typeEffect,
+          isDeleting ? deletingSpeed : typingSpeed
+        );
+    }
+    typeEffect();
+};
 
 
 const sliderTrack = document.getElementById("sliderTrack");
