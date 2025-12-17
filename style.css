@@ -1,7 +1,7 @@
 :root {
   --royal-green: #0b3d2e;
   --soft-gold: #d4af37;
-  --white: #ffffff;
+  --white:whitesmoke;
 }
 
 * {
@@ -147,10 +147,12 @@ nav a:hover {
   justify-content: center;
   gap: 25px;
   margin-bottom: 20px;
+  
 }
 
 .social-icons img {
   width: 28px;
+  border-radius: 70%;
   height: 28px;
   /*filter: brightness(0) invert(1);
   transition: transform 0.3s ease, filter 0.3s ease;*/
@@ -280,4 +282,10 @@ nav a:hover {
   color: var(--soft-gold);
   margin-bottom: 25px;
   font-size: 2rem;
+}
+
+.active {
+  color: var(--soft-gold);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
 }

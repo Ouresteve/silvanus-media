@@ -1,4 +1,4 @@
-const text = "Connecting People through photography and Videography by Capturing Moments That Last Forever.";
+const text = "Connecting People through Photography and Videography by Capturing Moments That Last Forever.";
 let index = 0;
 const images = [
   "Images/1765973486240.jpg",
@@ -12,7 +12,11 @@ const images = [
 
 function typeEffect() {
   if (index < text.length) {
-    document.getElementById("typing-text").textContent += text.charAt(index);
+    document.getElementById("typing-text").textContent += text.charAt(index)
+    while (index==80){
+        document.getElementById("typing-text").textContent -= text.charAt(index);
+        index--;
+    }
     index++;
     setTimeout(typeEffect, 80);
   }
