@@ -6,7 +6,9 @@ const images = [
   "Images/1765973555308.jpg",
   "Images/1765973518259.jpg",
   "Images/1765973581410.jpg",
-  "Images/1765973616230.jpg"
+  "Images/1765973616230.jpg",
+  "Images/1766072169770.jpg",
+  "Images/a7e118d354154dc4853b013ffb7f2dc1.jpg"
 ];
 
 /*
