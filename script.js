@@ -89,7 +89,7 @@ sliderImages.forEach(src => {
 });
 
 let position = 0;
-const speed = 0.4; // lower = slower, smoother
+const speed = 1.0; // lower = slower, smoother
 
 function moveSlider() {
   position -= speed;

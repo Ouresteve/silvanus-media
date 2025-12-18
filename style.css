@@ -11,7 +11,8 @@
 }
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  /*font-family: "Segoe UI", Arial, sans-serif;*/
+  font-size: 'Poppins' , sans-serif;
   background-color: var(--white);
   color: var(--white);
   min-height: 100vh;
@@ -25,6 +26,10 @@ body {
   background-color: #06261e;
   align-items: center;
   padding: 20px 60px;
+  position:fixed;
+  width:100%;
+  z-index:100;
+  border-radius:5px;
 
 
 }
@@ -33,6 +38,7 @@ body {
   color: var(--soft-gold);
   font-size: 1.8rem;
   letter-spacing: 1px;
+  margin:0;
 }
 
 nav a {
@@ -40,6 +46,8 @@ nav a {
   margin-left: 25px;
   text-decoration: none;
   font-size: 1rem;
+  
+  gap:1rem;
   
 }
 
@@ -65,6 +73,15 @@ nav a:hover {
   margin-bottom: 15px;
   min-height: 60px;
   max-width: 70%;
+  text-align: center;
+}
+.typing-text {
+  font-size: 2.0rem;
+  color: var(--soft-gold);
+  margin-bottom: 15px;
+  min-height: 60px;
+  max-width: 70%;
+  
 }
 
 .subtitle {
@@ -288,4 +305,52 @@ nav a:hover {
   color: var(--soft-gold);
   font-size: 1.8rem;
   letter-spacing: 1px;
+}
+.hero p {
+  opacity: 0.85;
+  color:var(--soft-gold);
+}
+
+.gallery-cta {
+  text-align: center;
+  padding: 70px 20px;
+  background-color:var(--royal-green);
+  
+}
+.gallery-page {
+  padding: 80px 20px;
+  text-align:center;
+}
+.thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:18px;
+  max-width: 1200px;
+  margin:auto;
+}
+.thumb-grid img:hover {
+  transform: scale(1.05);
+}
+.lightbox{
+  position: fixed;
+  background:var(--white);
+  display:none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width:90%;
+  max-height:90%;
+  border-radius: 10px;
+}
+
+.close-btn{
+  position: absolute;
+  top:25px;
+  right:35px;
+  font-size:40px;
+  color:#d4af37;
+  cursor:pointer;
 }
