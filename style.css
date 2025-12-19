@@ -13,8 +13,8 @@
 body {
   /*font-family: "Segoe UI", Arial, sans-serif;*/
   font-size: 'Poppins' , sans-serif;
-  background-color: var(--white);
-  color: var(--white);
+  background-color: var(--soft-gold);
+  color: var(--soft-gold);
   min-height: 100vh;
   border-radius:15;
 }
