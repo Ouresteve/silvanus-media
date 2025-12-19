@@ -55,3 +55,41 @@ viewer.addEventListener("click",e=> {
         viewer.style.display="none";
     }
 });
+
+window.addEventListener("load",()=> {
+    let autoScrollInterval;
+    let  autoScrolling=true;
+    const scrollSpeed = 0.5;
+    const intervalTime = 16;
+
+    function startAutoScroll(){
+        autoScrollInterval= setInterval(()=> {
+            if(!autoScrolling) return;
+            window.scrollBy(0,scrollSpeed);
+
+            if(window.innerHeight+window.scrollY>= document.body.offsetHeight) {
+                stopAutoScroll();
+
+            }
+        }, intervalTime);
+    }
+    function stopAutoScroll(){
+        autoScroll=false;
+        clearInterval(autoScrollInterval);
+        removeStopListeners();
+    }
+    function addStopListeners(){
+        window.addEventListener("wheel",stopAutoScroll,{passive:true});
+        window.addEventListener("keydown",stopAutoScroll);
+        window.addEventListener("mousedown",stopAutoScroll);
+    }
+    function removeStopListeners(){
+        window.removeEventListener("wheel",stopAutoScroll);
+        window.removeEventListener("touchstart",stopAutoScroll);
+        window.removeEventListener("keydown",stopAutoScroll);
+        window.removeEventListener("mousedown",stopAutoScroll);
+
+    }
+    addStopListeners();
+    startAutoScroll();
+});
