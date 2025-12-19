@@ -102,6 +102,7 @@ nav a:hover {
   text-decoration: none;
   border-radius: 30px;
   transition: 0.3s ease;
+  text-align: center;
 }
 
 .cta:hover {
