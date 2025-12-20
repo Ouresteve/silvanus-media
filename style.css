@@ -467,8 +467,8 @@ nav a:hover {
   position: relative;
   padding-left: 18px;
 }
-.package-cardul li::before{
-  content:".";
+.package-card ul li::before{
+  content:"✔";
   position: absolute;
   left:0;
   color:var(--soft-gold);
