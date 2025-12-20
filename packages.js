@@ -58,7 +58,7 @@ const personalPackages=[
     },
     {
         title: "Event Coverage",
-        price:" From Ksh 8000",
+        price:" From Ksh 10,000.00",
         features: [
             "Professional editing",
             "Online Gallery",
